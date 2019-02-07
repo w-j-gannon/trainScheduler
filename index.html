@@ -16,42 +16,127 @@
 <body>
     <!-- navbar -->
     <header>
-            <div class="collapse bg-dark" id="navbarHeader">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-md-7 py-4">
-                            <h4 class="text-white">William Gannon</h4>
-                            <p class="text-muted">A train scheduling app that utilizes firebase and moment.js</p>
-                            <p class="text-muted">Follow me by clicking the links!</p>
-                        </div>
-                        <div class="col-sm-4 offset-md-1 py-4">
-                            <h4 class="text-white">Contact</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="https://w-j-gannon.github.io/Basic-Portfolio/" class="text-white">Portfolio</a></li>
-                                <li><a href="https://github.com/w-j-gannon" class="text-white">GitHub</a></li>
-                            </ul>
-                        </div>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">William Gannon</h4>
+                        <p class="text-muted">A train scheduling app that utilizes firebase and moment.js. Built for the UT Coding Bootcamp, 2019.</p>
+                        <p class="text-muted">Follow me by clicking the links!</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://w-j-gannon.github.io/Basic-Portfolio/" class="text-white">Portfolio</a></li>
+                            <li><a href="https://github.com/w-j-gannon" class="text-white">GitHub</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="navbar navbar-dark bg-dark box-shadow">
-                <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <i class="fas fa-subway"></i>
-                    <strong> &nbsp Train Times</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-subway"></i>
+                <strong> &nbsp Train Times</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+        </div>
+    </header>
+    
+        <div class="container">
+
+            <br>
+        
+            <!-- Jumbotron Title -->
+            <div class="jumbotron">
+                <h1 class="text-center">
+                    <i class="far fa-clock"></i>
+                    Train Times
+                    <i class="far fa-clock"></i>
+                </h1>
+                <h3 class="text-center">Schedule of current train routes. Add a new route in the form below.</h3>
+            </div>
+        
+            <div class="row">
+                <div class="col-12">
+                <div class="card mb-3">
+                    <!-- Posted Train times card -->
+                    <div class="card-header text-white bg-secondary">Current Trains</div>
+                    <div class="card-body">
+                    
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (min)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Time to Next Arrival</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody id="time-table">
+                                <tr>
+                                
+                                <td id="name-display"></td>
+                                <td id="destination-display"></td>
+                                <td id="time-display"></td>
+                                <td id="month-display"></td>
+                                <td id="frequency-display"></td>
+                                
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 </div>
             </div>
-        </header>
-   
+        
+            <!-- Add a Train Route card -->
+            <div class="row">
+                <div class="col-12">
+                <div class="card mb-3">
+                    <div class="card-header text-white bg-secondary">Add a Route</div>
+                    <div class="card-body">
+        
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Train Name</label>
+                                <input type="name" class="form-control" id="name-input" aria-describedby="emailHelp">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="destination" class="form-control" id="destination-input" aria-describedby="emailHelp">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="time">First Train Time (hh:mm 24-hour time)</label>
+                                <input type="time" class="form-control" id="time-input" aria-describedby="emailHelp">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="frequency">Frequency</label>
+                                <input type="frequency" class="form-control" id="frequency-input" aria-describedby="emailHelp">
+                            </div>
+        
+                            <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
     
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
