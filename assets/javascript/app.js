@@ -1,7 +1,7 @@
 // in class example
 
 var now = moment();
-var start = moment("03:00 AM", "hh mm a");
+var start = moment("05:00", "HH mm");
 var frequency = 10;
 
 var minutesElapsed = now.diff(start, "minutes");
@@ -16,4 +16,4 @@ var nextStopMinutes = (stopsElapsed + 1) * frequency;
 
 start.add(nextStopMinutes, "minutes");
 
-console.log(start.format("hh:mm A"));
+console.log(start.format("HH:mm"));
