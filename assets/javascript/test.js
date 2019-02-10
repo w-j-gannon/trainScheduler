@@ -69,7 +69,7 @@ database.ref().on("child_added", function(childSnapshot) {
 
     var now = moment();
     var start = moment("05:00", "HH:mm");
-    var frequency = 10;
+    var frequency = trainFrequency;
 
     var minutesElapsed = now.diff(start, "minutes");
 
@@ -80,14 +80,16 @@ database.ref().on("child_added", function(childSnapshot) {
     start.add(nextStopMinutes, "minutes");
 
     console.log(start.format("HH:mm"));
-    
+
+    var nextStop = start.diff(now, "minutes");
+
     // Create the new row
     var newRow = $("<tr>").append(
         $("<td>").text(trainName),
         $("<td>").text(trainDestination),
         $("<td>").text(trainFrequency),
-        $("<td>").text(nextStopMinutes),
-        $("<td>").text(nextStopMinutes)
+        $("<td>").text(start.format("h:mm A")),
+        $("<td>").text(nextStop)
     );
     console.log(newRow);
     // Append the new row to the table
