@@ -60,11 +60,12 @@
                 </h1>
                 <h3 class="text-center">Schedule of current train routes. Add a new route in the form below.</h3>
             </div>
-        
+            
+            <!-- Posted Train times card -->
             <div class="row">
                 <div class="col-12">
                 <div class="card mb-3">
-                    <!-- Posted Train times card -->
+                    <!-- Posted Train times table -->
                     <div class="card-header text-white bg-secondary">Current Trains</div>
                     <div class="card-body">
                     
@@ -80,7 +81,7 @@
                                 </tr>
                             </thead>
                             <tbody id="time-table">
-                                <tr>
+                                <tr id="new-row">
                                 
                                 <td id="name-display"></td>
                                 <td id="destination-display"></td>
@@ -137,7 +138,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
+    <!-- My javascript -->
     <script type="text/javascript" src="assets/javascript/test.js"></script>
 </body>
 </html>

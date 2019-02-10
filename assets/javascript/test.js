@@ -68,7 +68,7 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log(trainFrequency);
 
     var now = moment();
-    var start = moment("05:00", "HH mm");
+    var start = moment("05:00", "HH:mm");
     var frequency = 10;
 
     var minutesElapsed = now.diff(start, "minutes");
@@ -80,32 +80,18 @@ database.ref().on("child_added", function(childSnapshot) {
     start.add(nextStopMinutes, "minutes");
 
     console.log(start.format("HH:mm"));
-    /*
-    // Prettify the employee start
-    var empStartPretty = moment.unix(timeStart).format("MM/DD/YYYY");
-
-    // Calculate the months worked using hardcore math
-    // To calculate the months worked
-    var empMonths = moment().diff(moment(timeStart, "X"), "months");
-    console.log(empMonths);
-
-    // Calculate the total billed rate
-    var empBilled = empMonths * trainFrequency;
-    console.log(empBilled);
-    */
-
+    
     // Create the new row
     var newRow = $("<tr>").append(
         $("<td>").text(trainName),
         $("<td>").text(trainDestination),
         $("<td>").text(trainFrequency),
-        //$("<td>").text(empMonths),
         $("<td>").text(nextStopMinutes),
         $("<td>").text(nextStopMinutes)
     );
-
+    console.log(newRow);
     // Append the new row to the table
-    $("#time-table > tbody").append(newRow);
+    $("#time-table").append(newRow);
 });
 
 
